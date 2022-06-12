@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- (db) META -->
+        <meta charset="utf-8">
+        <meta name="author" content="https://dottbuff.eu">
+        <title>dottbuff.eu - hud</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- (db) FONT AWESOME -->
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css">
+
+        <!-- (db) GOOGLE FONTS -->
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body onload="LoadSettings()">
+        <div class='hudedit'>
+            <div class="hudedit__exit"><i class="fas fa-times" onclick="CloseHudEdit()"></i></div>
+            <div class="hudedit__color">
+                <span class="hudedit__text">Wybierz kolor:</span>
+                <div class="dsadauidha"><input id="dsadauidha" type="color"/></div>
+            </div>
+            <div class="hudedit_icons">
+                <span class="hudedit__text">Wybierz ikonkę:</span></br>
+                <i class='hudedit__health fas fa-heart selected' onclick="SelectIcon('health')"></i>
+                <i class='hudedit__armor fas fa-shield' onclick="SelectIcon('armor')"></i>
+                <i class='hudedit__hunger fas fa-hamburger' onclick="SelectIcon('hunger')"></i>
+                <i class='hudedit__thirst fas fa-tint' onclick="SelectIcon('thirst')"></i>
+                <i class="hudedit__micro fas fa-microphone-alt" onclick="SelectIcon('micro')"></i>
+            </div>
+        </div>
+        <div class='hud'>
+            <div class='hud__container'>
+                <div class='hud__item health'>
+                    <i class='fas fa-heart'></i>
+                    <div class='hud__item--bg2'></div>
+                    <div class='hud__item--bg'></div>
+                </div>
+
+                <div class='hud__item armor'>
+                    <i class='fas fa-shield'></i>
+                    <div class='hud__item--bg2'></div>
+                    <div class='hud__item--bg'></div>
+                </div>
+
+                <div class='hud__item hunger'>
+                    <i class='fas fa-hamburger'></i>
+                    <div class='hud__item--bg2'></div>
+                    <div class='hud__item--bg'></div>
+                </div>
+
+                <div class='hud__item thirst'>
+                    <i class='fas fa-tint'></i>
+                    <div class='hud__item--bg2'></div>
+                    <div class='hud__item--bg'></div>
+                </div>
+
+                <div class='hud__item micro'>
+                    <i class="fas fa-microphone-alt"></i>
+                    <div class='hud__item--bg2'></div>
+                    <div class='hud__item--bg'></div>
+                </div>
+            </div>
+        </div>
+        <style>
+			@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+			
+			* {
+				font-family: 'Poppins', sans-serif;
+			}
+			
+            .hudedit {
+                display: none;
+                border-radius: 7px;
+                background: rgba(0,0,0,0.8);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) skewX(-3deg);
+                height: 400px;
+                width: 600px;
+                color: #fff;
+            }
+
+            .hudedit__exit {
+                position: absolute;
+                top: 0px;
+                right: 8px;
+                font-size: 27px;
+            }
+            
+            input[type='color'] {
+                background-color: rgba(0, 0, 0, 0);
+                outline: 0;
+                border: 0;
+                height: 50px;
+                width: 50px;
+                cursor: pointer;
+            }
+
+            input[type='color'] {
+                position: absolute;
+                right: -8px;
+                top: -8px;
+                width: 86px;
+                height: 86px;
+                border: none;
+            }
+
+            .dsadauidha {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%); 
+                overflow: hidden;
+                width: 70px;
+                height: 70px;
+                border: none;
+                border-radius: 10px;
+                box-shadow: 0 0 10px #ffffff5d;
+            }
+
+            .hudedit__color {
+                position: absolute;
+                top: 60px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .hudedit__text {
+                position: relative;
+                top: -10px;
+                color: #fff;
+                font-size: 30px;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+
+            .hudedit_icons {
+                position: absolute;
+                bottom: 40px;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 40px;
+                width: 330px;
+                text-align: center;
+            }
+
+            .hudedit_icons > i {
+                margin: 0 10px;
+            }
+
+            .hudedit_icons > i:hover {
+                cursor: pointer;
+                color: #e100ff;
+            }
+
+            .hudedit_icons > .selected {
+                cursor: pointer;
+                color: #6200ff;
+                -webkit-text-stroke: 1px #fff;
+            }
+
+            .hud {
+                display: block;
+                position: absolute;
+                border-radius: 7px;
+                background: rgba(0,0,0,0.6);
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%) skewX(-0deg);
+            }
+
+            .hud__container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+            }
+
+            .hud__item {
+                display: block;
+                border-radius: 7px;
+                width: 35px;
+                height: 35px;
+                line-height: 35px;
+                text-align: center;
+                background: rgba(23, 23, 23, 0.95);
+                position: relative;
+            }
+
+            .hud__item:not(:last-child) {
+                margin: 0 15px 0 0;
+            }
+
+            .hud__item i {
+                color: #fff;
+                transform: skewX(0deg);
+            }
+
+            .hud__item--bg2 {
+                display: block;
+                position: absolute;
+                left: -2.5px;
+                bottom: -2.5px;
+                border-radius: 7px;
+                width: calc( 100% + 5px );
+                height: calc(100% + 5px );
+                z-index: -2;
+            }
+
+            .hud__item--bg {
+                display: block;
+                position: absolute;
+                left: -2.5px;
+                bottom: -2.5px;
+                border-radius: 7px;
+                width: calc( 100% + 5px );
+                height: calc(73% + 5px );
+                z-index: -1;
+            }
+
+            .hud__item.health .hud__item--bg {
+                background: #f11b5f;
+            }
+
+            .hud__item.armor .hud__item--bg {
+                background: #f11b5f;
+            }
+
+            .hud__item.hunger .hud__item--bg {
+                background: #f11b5f;
+            }
+
+            .hud__item.thirst .hud__item--bg {
+                background: #f11b5f;
+            }
+
+            .hud__item.micro .hud__item--bg {
+                background: #f11b5f;
+            }
+
+            .hud__item.health .hud__item--bg2 {
+                background: #273cf7;
+            }
+
+            .hud__item.armor .hud__item--bg2 {
+                background: #273cf7;
+            }
+
+            .hud__item.hunger .hud__item--bg2 {
+                background: #273cf7;
+            }
+
+            .hud__item.thirst .hud__item--bg2 {
+                background: #273cf7;
+            }
+
+            .hud__item.micro .hud__item--bg2 {
+                background: #273cf7;
+            }
+        </style>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    	<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+        <script>
+            var selected = "health"
+
+            window.addEventListener("message", (event) => {
+                if (event.data.action == "UPDATE_HUD"){
+                    if (event.data.show) {
+                        $(".hud").show(500)
+                        if (event.data.isdead) {
+                            $(".hud__item.health .hud__item--bg").css("height", "calc(0% + 5px)")
+                        } else {
+                            $(".hud__item.health .hud__item--bg").css("height", "calc("+ (event.data.health - 100) +"% + 5px)")
+                        }
+                        $(".hud__item.armor .hud__item--bg").css("height", "calc("+ event.data.armor +"% + "+ (event.data.armor == 0 ? 0 : 5) +"px)")
+                        $(".hud__item.hunger .hud__item--bg").css("height", "calc("+ event.data.hunger +"% + "+ (event.data.hunger == 0 ? 0 : 5) +"px)")
+                        $(".hud__item.thirst .hud__item--bg").css("height", "calc("+ event.data.thirst +"% + "+ (event.data.thirst == 0 ? 0 : 5) +"px)")
+                        $(".hud__item.micro .hud__item--bg").css("height", "calc("+ event.data.voice +"% + 5px)")
+                    } else {
+                        $(".hud").hide(500)
+                    }
+                }
+
+                if (event.data.action == "SHOW_HUDEDIT"){
+					$(".hudedit").show(500)
+                }
+
+                if (event.data.action == "UPDATE_STATE"){
+                    $('.fa-microphone-alt').css('color', event.data.state ? '#ff0000' : '#fff');
+                }
+            })
+			
+            function SelectIcon(icon){
+                selected = icon
+                localStorage.setItem("selected", selected)
+                $(".hudedit__health").removeClass("selected")
+                $(".hudedit__armor").removeClass("selected")
+                $(".hudedit__hunger").removeClass("selected")
+                $(".hudedit__thirst").removeClass("selected")
+                $(".hudedit__micro").removeClass("selected")
+                $(".hudedit__" + icon).addClass("selected")
+
+                var ValueStorage = localStorage.getItem(selected)
+                if (ValueStorage) {
+                    $("#dsadauidha").val(ValueStorage);
+                } else {
+                    var color = "#000"
+                    if (selected == "health"){
+                        color = "#ff0000"
+                    } else if (selected == "armor"){
+                        color = "#494949"
+                    } else if (selected == "hunger"){
+                        color = "#ff7b00"
+                    } else if (selected == "thirst"){
+                        color = "#00aeff"
+                    } else if (selected == "micro"){
+                        color = "#cc00ff"
+                    }
+
+                    $("#dsadauidha").val(color);
+                }
+            }
+
+            $("#dsadauidha").on('input', function (evt) {
+                var kolorek = this.value
+                $(".hud__item."+ selected +" .hud__item--bg").css("background", kolorek);
+                $(".hud__item."+ selected +" .hud__item--bg2").css("background", kolorek + "21");
+                localStorage.setItem(selected, kolorek)
+            });
+
+            function CloseHudEdit(){
+				$(".hudedit").hide(500)
+				$.post('https://rp4u_hud/NUIFocusOff', JSON.stringify({}));
+				console.log("x")
+            }
+
+            function LoadSettings(){
+                var SelectStorage = localStorage.getItem("selected")
+                if (SelectStorage) {
+                    SelectIcon(SelectStorage)
+                }
+
+                    // PICKER COLOR SET
+                    var ValueStorage = localStorage.getItem(selected)
+                    if (ValueStorage) {
+                        $("#dsadauidha").val(ValueStorage);
+                    }
+                    // PICKER COLOR SET
+
+                    var HealthStorage = localStorage.getItem("health")
+                    if (HealthStorage) {
+                        $(".hud__item.health .hud__item--bg").css("background", HealthStorage);
+                        $(".hud__item.health .hud__item--bg2").css("background", HealthStorage + "21");
+                    }
+                    var ArmorStorage = localStorage.getItem("armor")
+                    if (ArmorStorage) {
+                        $(".hud__item.armor .hud__item--bg").css("background", ArmorStorage);
+                        $(".hud__item.armor .hud__item--bg2").css("background", ArmorStorage + "21");
+                    }
+                    var HungerStorage = localStorage.getItem("hunger")
+                    if (HungerStorage) {
+                        $(".hud__item.hunger .hud__item--bg").css("background", HungerStorage);
+                        $(".hud__item.hunger .hud__item--bg2").css("background", HungerStorage + "21");
+                    }
+                    var ThirstStorage = localStorage.getItem("thirst")
+                    if (ThirstStorage) {
+                        $(".hud__item.thirst .hud__item--bg").css("background", ThirstStorage);
+                        $(".hud__item.thirst .hud__item--bg2").css("background", ThirstStorage + "21");
+                    }
+                    var MicroStorage = localStorage.getItem("micro")
+                    if (MicroStorage) {
+                        $(".hud__item.micro .hud__item--bg").css("background", MicroStorage);
+                        $(".hud__item.micro .hud__item--bg2").css("background", MicroStorage + "21");
+                    }
+            }
+        </script>
+    </body>
+</html>

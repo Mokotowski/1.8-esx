@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap%27');
+
+p {
+    display: flex;
+
+    margin: 0;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    user-select: none;
+}
+
+/* panel */
+#panel {
+    background-color: #141313ab;
+
+    padding: 30px;
+    border-radius: 50px;
+
+    display: none;
+
+	text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+
+#title {
+    color: white;
+
+    margin: 0;
+}
+
+#watermark {
+    color: gray;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 15px 0 10px 0;
+}
+
+.color-button {
+    display: flex;
+
+    padding: 7px;
+
+    cursor: pointer;
+
+    transition: background-color .35s;
+
+    border-radius: 100%;
+}
+
+input[type=radio]:checked + .color-button {
+    background-color: #7B68EE;
+}
+
+/* status */
+#status {
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    /* transition: justify-content 1s; */
+    transform: translateX(-10%);
+    padding: 7px 7px;
+    background: rgba(0,0,0,0.7);
+    transform: skew(-5deg);
+    border-radius: 5px;
+    transition: all .3s ease;
+}
+
+.status-svg {
+    width: 40px;
+    height: 40px;
+    margin-right: 2px;
+}
+
+.status-circle {
+    stroke: white;
+    stroke-width: 3.5px;
+    transform: rotate(-90deg);
+  	transform-origin: 50% 50%;
+    transition: stroke-dashoffset .35s;
+}
+
+#status svg:nth-child(1) svg circle {
+    stroke: #c33764 !important;
+}
+
+#status svg:nth-child(2) svg circle {
+    stroke: #1d2671;
+}
+
+#status svg:nth-child(3) svg circle {
+    stroke: #c33764;
+}
+
+#status svg:nth-child(4) svg circle {
+    stroke: #1d2671;
+}
+
+#status svg:nth-child(5) svg circle {
+    stroke: #c33764;
+}
+
+#status svg:nth-child(6) svg circle {
+    stroke: #1d2671;
+}
