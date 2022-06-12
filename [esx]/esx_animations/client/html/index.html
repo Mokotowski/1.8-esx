@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+        <script type="text/javascript">
+            window.onload = function(){
+                window.addEventListener('message', (event) => {
+                    switch (event.data.action) {
+                        case 'updateBinding': {
+                            localStorage.setItem("binding", event.data.json);
+                            break;
+                        }
+
+                        default : break;
+                    }
+                });
+
+                $.post("https://richrp_animacje/setBinding", JSON.stringify({ binding: isJSONValid(localStorage.getItem("binding")) }))
+            };
+
+            function isJSONValid(str) {
+                try { JSON.parse(str); } catch (e) { return false; }
+                return JSON.parse(str);
+            }
+        </script>
+    </head>
+    <body></body>
+</html>

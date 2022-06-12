@@ -1,0 +1,1109 @@
+
+
+
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Teko:600" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans:200" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Hammersmith+One&display=swap" rel="stylesheet">
+	<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+	<script>
+		
+
+
+		$(function(){
+		window.onload = function(e){
+			window.addEventListener('message', function(event){
+
+				var item = event.data;
+
+				
+					
+				$('#'+item.compoent).prop("max", item.maxval);
+						
+
+				
+
+				if (item !== undefined && item.type === "container") {
+
+					if (item.display === true) {
+						$('.container').delay(0).fadeIn( 0 );
+						$('.container').css("display", "block");
+						$('#camera').delay().fadeIn(0);
+						$('#camera').css('display','block');
+
+						if(item.clothe == true){
+							if(item.editclothe == true){
+								$('.cloth').css('display','block');
+								$('.savecloth').css('display','block');
+							}
+							tshirt_1 = item.tshirt_1;
+							tshirt_2 = item.tshirt_2;
+							torso_1 = item.torso_1;
+							torso_2 = item.torso_2;
+							decals_1 = item.decals_1;
+							decals_2 = item.decals_2;
+							arms = item.arms;
+							arms_2 = item.arms_2;
+							pants_1 = item.pants_1;
+							pants_2 = item.pants_2;
+							shoes_1 = item.shoes_1;
+							shoes_2 = item.shoes_2;
+							bproof_1 = item.bproof_1;
+							bproof_2 = item.bproof_2;
+							chain_1 = item.chain_1;
+							chain_2 = item.chain_2;
+							helmet_1 = item.helmet_1;
+							helmet_2 = item.helmet_2;
+							glasses_1 = item.glasses_1;
+							glasses_2 = item.glasses_2;
+							watches_1 = item.watches_1;
+							watches_2 = item.watches_2;
+							bracelets_1 = item.bracelets_1;
+							bracelets_2 = item.bracelets_2;
+							bags_1 = item.bags_1;
+							bags_2 = item.bags_2;
+							ears_1 = item.ears_1;
+							ears_2 = item.ears_2;
+							mask_1 = item.mask_1;
+							mask_2 = item.mask_2
+
+
+							$('#tshirt_12').text(tshirt_1.value);
+							$('#tshirt_1').prop('max',tshirt_1.maxval);
+							$('#tshirt_1').prop('value',tshirt_1.value);
+
+							$('#tshirt_22').text(tshirt_2.value);
+							$('#tshirt_2').prop('max',tshirt_1);
+							$('#tshirt_2').prop('value',tshirt_2.value);
+
+
+							$('#torso_12').text(torso_1.value);
+							$('#torso_1').prop('max',torso_1.maxval);
+							$('#torso_1').prop('value',torso_1.value);
+
+							$('#torso_22').text(torso_2.value);
+							$('#torso_2').prop('max',torso_2);
+							$('#torso_2').prop('value',torso_2.value);
+
+
+							$('#decals_12').text(decals_1.value);
+							$('#decals_1').prop('max',decals_1.maxval);
+							$('#decals_1').prop('value',decals_1.value);
+
+							$('#decals_22').text(decals_2.value);
+							$('#decals_2').prop('max',decals_2);
+							$('#decals_2').prop('value',decals_2.value);
+
+
+							$('#arms2').text(arms.value);
+							$('#arms').prop('max',arms.maxval);
+							$('#arms').prop('value',arms.value);
+
+							$('#arms_22').text(arms_2.value);
+							$('#arms_2').prop('max',arms_2);
+							$('#arms_2').prop('value',arms_2.value);
+
+
+							$('#pants_12').text(pants_1.value);
+							$('#pants_1').prop('max',pants_1.maxval);
+							$('#pants_1').prop('value',pants_1.value);
+
+							$('#pants_22').text(pants_2.value);
+							$('#pants_2').prop('max',pants_2);
+							$('#pants_2').prop('value',pants_2.value);
+
+
+							$('#shoes_12').text(shoes_1.value);
+							$('#shoes_1').prop('max',shoes_1.maxval);
+							$('#shoes_1').prop('value',shoes_1.value);
+
+							$('#shoes_22').text(shoes_2.value);
+							$('#shoes_2').prop('max',shoes_2);
+							$('#shoes_2').prop('value',shoes_2.value);
+
+
+							$('#bproof_12').text(bproof_1.value);
+							$('#bproof_1').prop('max',bproof_1.maxval);
+							$('#bproof_1').prop('value',bproof_1.value);
+
+							$('#bproof_22').text(bproof_2.value);
+							$('#bproof_2').prop('max',bproof_2);
+							$('#bproof_2').prop('value',bproof_2.value);
+
+
+							$('#chain_12').text(chain_1.value);
+							$('#chain_1').prop('max',chain_1.maxval);
+							$('#chain_1').prop('value',chain_1.value);
+
+							$('#chain_22').text(chain_2.value);
+							$('#chain_2').prop('max',chain_2);
+							$('#chain_2').prop('value',chain_2.value);
+
+
+							$('#helmet_12').text(helmet_1.value);
+							$('#helmet_1').prop('max',helmet_1.maxval);
+							$('#helmet_1').prop('value',helmet_1.value);
+
+							$('#helmet_22').text(helmet_2.value);
+							$('#helmet_2').prop('max',7);
+							$('#helmet_2').prop('value',helmet_2.value);
+
+
+							$('#glasses_12').text(glasses_1.value);
+							$('#glasses_1').prop('max',glasses_1.maxval);
+							$('#glasses_1').prop('value',glasses_1.value);
+
+							$('#glasses_22').text(glasses_2.value);
+							$('#glasses_2').prop('max',glasses_2);
+							$('#glasses_2').prop('value',glasses_2.value);
+
+
+							$('#watches_12').text(watches_1.value);
+							$('#watches_1').prop('max',watches_1.maxval);
+							$('#watches_1').prop('value',watches_1.value);
+
+							$('#watches_22').text(watches_2.value);
+							$('#watches_2').prop('max',watches_2);
+							$('#watches_2').prop('value',watches_2.value);
+
+
+							$('#bracelets_12').text(bracelets_1.value);
+							$('#bracelets_1').prop('max',bracelets_1.maxval);
+							$('#bracelets_1').prop('value',bracelets_1.value);
+
+							$('#bracelets_22').text(bracelets_2.value);
+							$('#bracelets_2').prop('max',bracelets_2);
+							$('#bracelets_2').prop('value',bracelets_2.value);
+
+
+							$('#ears_12').text(ears_1.value);
+							$('#ears_1').prop('max',ears_1.maxval);
+							$('#ears_1').prop('value',ears_1.value);
+
+							$('#ears_22').text(ears_2.value);
+							$('#ears_2').prop('max',ears_2);
+							$('#ears_2').prop('value',ears_1.value);
+
+							$('#mask_12').text(mask_1.value);
+							$('#mask_1').prop('max',mask_1.maxval);
+							$('#mask_1').prop('value',mask_1.value);
+
+							$('#mask_22').text(mask_2.value);
+							$('#mask_2').prop('max',mask_2);
+							$('#mask_2').prop('value',mask_2.value);
+
+
+						}
+						
+						
+						 if(item.barber == true){
+							if(item.editbarber == true){
+								$('.barber').css('display','block');
+							}
+							hair_1 = item.hair_1;
+							hair_color_1 = item.hair_color_1;
+
+							hair_2 = item.hair_2;
+							hair_color_2 = item.hair_color_2;
+
+							beard_1 = item.beard_1;
+							beard_2 = item.beard_2;
+							beard_3 = item.beard_3;
+							beard_4 = item.beard_4;
+
+							eyebrows_1 = item.eyebrows_1;
+							eyebrows_2 = item.eyebrows_2;
+							eyebrows_3 = item.eyebrows_3;
+
+							makeup_1 = item.makeup_1;
+							makeup_2 = item.makeup_2;
+							makeup_3 = item.makeup_3;
+
+
+							blush_1 = item.blush_1;
+							blush_2 = item.blush_2;
+							blush_3 = item.blush_3;
+
+
+							lipstick_1 = item.lipstick_1;
+							lipstick_2 = item.lipstick_2;
+							lipstick_3 = item.lipstick_3;
+
+							sex = item.sex;
+							skin = item.skin;
+							eyecolor = item.eyecolor;
+							wrinkles = item.wrinkles;
+							wrinkle_thickness = item.wrinkle_thickness;
+							freckles = item.freckles;
+							freckles_1 = item.freckles_1;
+							chest_hair = item.chest_hair;
+							chest_color = item.chest_color;
+							
+							
+
+							$('#hair_12').text(hair_1.value);
+							$('#hair_1').prop('max',hair_1.maxval);
+							$('#hair_1').prop('value',hair_1.value);
+
+							$('#hair_color_12').text(hair_color_1.value);
+							$('#hair_color_1').prop('max',hair_color_1);
+							$('#hair_color_1').prop('value',hair_color_1.value);
+
+							$('#hair_22').text(hair_2.value);
+							$('#hair_2').prop('max',hair_2.maxval);
+							$('#hair_2').prop('value',hair_2.value);
+
+							$('#hair_color_22').text(hair_color_2.value);
+							$('#hair_color_2').prop('max',hair_color_2);
+							$('#hair_color_2').prop('value',hair_color_2.value);
+
+
+
+							$('#beard_12').text(beard_1.value);
+							$('#beard_1').prop('max',beard_1.maxval);
+							$('#beard_1').prop('value',beard_1.value);
+
+
+							$('#beard_22').text(beard_2.value);
+							$('#beard_2').prop('max',beard_2.maxval);
+							$('#beard_2').prop('value',beard_2.value);
+
+							$('#beard_32').text(beard_3.value);
+							$('#beard_3').prop('max',beard_3.maxval);
+							$('#beard_3').prop('value',beard_3.value);
+
+						
+
+							$('#eyebrows_12').text(eyebrows_1.value);
+							$('#eyebrows_1').prop('max',eyebrows_1.maxval);
+							$('#eyebrows_1').prop('value',eyebrows_1.value);
+
+
+							$('#eyebrows_22').text(eyebrows_2.value);
+							$('#eyebrows_2').prop('max',eyebrows_2.maxval);
+							$('#eyebrows_2').prop('value',eyebrows_2.value);
+
+							$('#eyebrows_32').text(eyebrows_3.value);
+							$('#eyebrows_3').prop('max',eyebrows_3);
+							$('#eyebrows_3').prop('value',eyebrows_3.value);
+
+
+
+							$('#makeup_12').text(makeup_1.value);
+							$('#makeup_1').prop('max',makeup_1.maxval);
+							$('#makeup_1').prop('value',makeup_1.value);
+
+
+							$('#makeup_22').text(makeup_2.value);
+							$('#makeup_2').prop('max',makeup_2.maxval);
+							$('#makeup_2').prop('value',makeup_2.value);
+
+							$('#makeup_32').text(makeup_3.value);
+							$('#makeup_3').prop('max',makeup_3);
+							$('#makeup_3').prop('value',makeup_3.value);
+
+
+
+							$('#blush_12').text(blush_1.value);
+							$('#blush_1').prop('max',blush_1.maxval);
+							$('#blush_1').prop('value',blush_1.value);
+
+
+							$('#blush_22').text(blush_2.value);
+							$('#blush_2').prop('max',blush_2.maxval);
+							$('#blush_2').prop('value',blush_2.value);
+
+							$('#blush_32').text(blush_3.value);
+							$('#blush_3').prop('max',blush_3);
+							$('#blush_3').prop('value',blush_3.value);
+
+
+
+							$('#lipstick_12').text(lipstick_1.value);
+							$('#lipstick_1').prop('max',lipstick_1.maxval);
+							$('#lipstick_1').prop('value',lipstick_1.value);
+
+
+							$('#lipstick_22').text(lipstick_2.value);
+							$('#lipstick_2').prop('max',lipstick_2.maxval);
+							$('#lipstick_2').prop('value',lipstick_2.value);
+
+							$('#lipstick_32').text(lipstick_3.value);
+							$('#lipstick_3').prop('max',lipstick_3);
+							$('#lipstick_3').prop('value',lipstick_3.value);
+
+
+							$('#sex12').text(sex.value);
+							$('#sex').prop('max',sex.maxval);
+							$('#sex').prop('value',sex.value);
+
+							$('#skin12').text(skin.value);
+							$('#skin').prop('max',skin.maxval);
+							$('#skin').prop('value',skin.value);
+
+							$('#eye_color12').text(eyecolor.value);
+							$('#eye_color').prop('max',eyecolor.maxval);
+							$('#eye_color').prop('value',eyecolor.value);
+
+
+							$('#age_112').text(wrinkles.value);
+							$('#age_1').prop('max',wrinkles.maxval);
+							$('#age_1').prop('value',wrinkles.value);
+
+
+							$('#age_212').text(wrinkle_thickness.value);
+							$('#age_2').prop('max',wrinkle_thickness.maxval);
+							$('#age_2').prop('value',wrinkle_thickness.value);
+
+							$('#moles_112').text(freckles.value);
+							$('#moles_1').prop('max',freckles.maxval);
+							$('#moles_1').prop('value',freckles.value);
+
+							$('#moles_212').text(freckles_1.value);
+							$('#moles_2').prop('max',freckles_1.maxval);
+							$('#moles_2').prop('value',freckles_1.value);
+
+							
+							$('#chest_112').text(chest_hair.value);
+							$('#chest_1').prop('max',chest_hair.maxval);
+							$('#chest_1').prop('value',chest_hair.value);
+
+							$('#chest_312').text(chest_color.value);
+							$('#chest_3').prop('max',chest_color.maxval);
+							$('#chest_3').prop('value',chest_color.value);
+
+
+						}
+
+						if(item.face == true){
+							//$('.skin').css('display','block');
+							$('.barber').css('display','block');
+							$('.barber').css('height','95%');
+							$('.barber').css('top','5%');
+							$('.record33').css('display','block');
+							$('.record22').css('display','block');
+							$('.category1').css('background-color','#ffcc00');
+							$('.category1').css('color','#000000b7');
+							$('.save').text('Zapisz');
+							
+						}
+						
+
+
+
+					} else if (item.display === false) {
+						$('.container').fadeOut( 0 );
+						$('.articules').empty();
+						$('.cloth').css('display','none');
+						$('.savecloth').css('display','none');
+						$('.barber').css('display','none');
+						$('.barber').css('height','100%');
+						$('.barber').css('top','0');
+						$('.skin').css('display','none');
+						$('.record22').css('display','none');
+						$('.save').text('Kup');
+
+					}
+					
+				}
+
+
+				
+			});
+		};
+	});
+
+
+	function clotheedit(type,value) {
+			var values = parseInt(value);
+			if(type == 'arms'){
+			$('#'+type+'2').text(value);
+			$('#'+type+'_22').text(0);
+			$('#'+type+'_2').prop('value',0);
+			var type1 = type;
+			var type2 = type+'_2';
+			}else if(type == 'hair_1'){
+			$('#'+type+'2').text(value);
+			$('#hair_color_12').text(0);
+			$('#hair_color_1').prop('value',0);
+			var type1 = type;
+			var type2 = 'hair_color_1';
+			$.post('http://esx_skin/maxcolor', JSON.stringify({type:'hair_2'}));
+			}else if(type == 'hair_2'){
+			$('#'+type+'2').text(value);
+			$('#hair_color_22').text(0);
+			$('#hair_color_2').prop('value',0);
+			var type1 = type;
+			var type2 = 'hair_color_2';
+			}else{
+			$('#'+type+'12').text(value);
+			$('#'+type+'22').text(0);
+			$('#'+type+'2').prop('value',0);
+			var type1 = type+'1';
+			var type2 = type+'2';
+			}
+			$.post('http://esx_skin/value', JSON.stringify({value:values,type:type1}));
+			$.post('http://esx_skin/value', JSON.stringify({value:0,type:type2}));
+			$.post('http://esx_skin/maxcolor', JSON.stringify({type:type2}));
+	}
+
+	function clotheedit2(type,value) {
+			var values = parseInt(value);
+			$('#'+type+'2').text(value);
+			$.post('http://esx_skin/value', JSON.stringify({value:values,type:type}));
+	}
+
+
+	function hairedit(type,value) {
+			var values = parseInt(value);
+			if(type == 'hair_1'){
+			$('#'+type+'2').text(value);
+			
+			var type1 = type;
+			var type2 = 'hair_color_1';
+			$.post('http://esx_skin/maxcolor', JSON.stringify({type:'hair_2'}));
+			}else if(type == 'hair_2'){
+			$('#'+type+'2').text(value);
+			
+			var type1 = type;
+			var type2 = 'hair_color_2';
+			}else{
+			$('#'+type+'12').text(value);
+			
+			var type1 = type+'1';
+			var type2 = type+'2';
+			}
+			$.post('http://esx_skin/value', JSON.stringify({value:values,type:type1}));
+			//$.post('http://esx_skin/value', JSON.stringify({value:0,type:type2}));
+			$.post('http://esx_skin/maxcolor', JSON.stringify({type:type2}));
+	}
+
+
+	function faceedit(type,value) {
+			var values = parseFloat(value);
+			
+			$('#'+type+'12').text(value);
+			var type1 = type;
+						
+			$.post('http://esx_skin/value', JSON.stringify({value:values,type:type1}));
+
+	}
+
+	function saveskin(){
+		if($('.savecloth').val().length > 0 && $('.savecloth').val().length <= 10){
+			var namecloth = $('.savecloth').val();
+			$.post('http://esx_skin/saveskin', JSON.stringify({}));
+			$.post('http://esx_skin/saveinhouse', JSON.stringify({name:namecloth}));
+			$.post('http://esx_skin/NUIFocusOffsave', JSON.stringify({}));
+		}else{
+			$.post('http://esx_skin/saveskin', JSON.stringify({}));
+			$.post('http://esx_skin/NUIFocusOffsave', JSON.stringify({}));
+		}
+		
+
+	}
+
+	function exit(){
+		$.post('http://esx_skin/NUIFocusOffnosave', JSON.stringify({}));
+	}
+
+	function camera(angle){
+		
+		var angles = parseInt(angle);
+		$('#camera22').text(angles);
+		$.post('http://esx_skin/camera', JSON.stringify({angle:angles}));
+	}
+
+
+	function twarz(){
+		$('.skin').css('display','block');
+		$('.skin').css('height','95%');
+		$('.skin').css('top','5%');
+		$('.category2').css('background-color','#ffcc00');
+		$('.category2').css('color','#000000b7');
+		$.post('http://esx_skin/camerazoom', JSON.stringify({zoom:0.6,cam:0.65,cam2:0.65}));
+		////////////////////////////
+		$('.barber').css('display','none');
+		$('.record33').css('display','none');
+		$('.category1').css('background-color','#000000b7');
+		$('.category1').css('color','#CCB78E');
+		//////////////////////////
+		$('.cloth').css('display','none');
+		$('.category3').css('background-color','#000000b7');
+		$('.category3').css('color','#CCB78E');
+	}
+
+	function cialo(){
+		$('.barber').css('display','block');
+		$('.barber').css('height','95%');
+		$('.barber').css('top','5%');
+		$('.record33').css('display','block');
+		$('.category1').css('background-color','#ffcc00');
+		$('.category1').css('color','#000000b7');
+		$.post('http://esx_skin/camerazoom', JSON.stringify({zoom:0.6,cam:0.65,cam2:0.65}));
+
+		/////////////////////////
+		$('.skin').css('display','none');
+		$('.category2').css('background-color','#000000b7');
+		$('.category2').css('color','#CCB78E');
+		////////////////////////
+		$('.cloth').css('display','none');
+		$('.category3').css('background-color','#000000b7');
+		$('.category3').css('color','#CCB78E');
+
+	}
+
+	function odziez(){
+		$('.cloth').css('display','block');
+		$('.cloth').css('height','95%');
+		$('.cloth').css('top','5%');
+		$('.category3').css('background-color','#ffcc00');
+		$('.category3').css('color','#000000b7');
+		$.post('http://esx_skin/camerazoom', JSON.stringify({zoom:1.75,cam:0.25,cam2:0}));	
+		/////////////////////////////
+		$('.skin').css('display','none');
+		$('.category2').css('background-color','#000000b7');
+		$('.category2').css('color','#CCB78E');
+		////////////////////////////
+		$('.barber').css('display','none');
+		$('.record33').css('display','none');
+		$('.category1').css('background-color','#000000b7');
+		$('.category1').css('color','#CCB78E');
+	}
+
+	</script>
+
+	<script src="script.js" type="text/javascript"></script>
+</head>
+<body>
+	<div class="container" style="display:none;">
+
+
+
+		<div class="cloth" style="display:none">
+
+			
+			<div class="record">
+				<label for="tshirt_1">Rodzaj t-shirtu: </label><label  id="tshirt_12">0</label><br>
+				<input type="range" min="0" max="0" value="0" step="1" id="tshirt_1" oninput="clotheedit('tshirt_',this.value)">
+			</div>
+			<div class="record">
+					<label for="tshirt_2">Kolor t-shirtu: </label><label id="tshirt_22">0</label><br>
+					<input type="range" min="0" max="0" value="0" step="1" id="tshirt_2" oninput="clotheedit2('tshirt_2',this.value)">
+			</div>
+
+			
+
+			<div class="record">
+					<label for="torso_1">Rodzaj koszuli: </label><label id="torso_12">0</label><br>
+					<input type="range" min="0" max="0" value="0" step="1" id="torso_1" oninput="clotheedit('torso_',this.value)">
+				</div>
+			<div class="record">
+					<label for="torso_2">Kolor koszuli: </label><label id="torso_22">0</label><br>
+					<input type="range" min="0" max="0" value="0" step="1" id="torso_2" oninput="clotheedit2('torso_2',this.value)">
+			</div>
+
+			
+
+			<div class="record">
+					<label for="decals_1">Rodzaj naszywki: </label><label id="decals_12">0</label><br>
+					<input type="range" min="0" max="0" value="0" step="1" id="decals_1" oninput="clotheedit('decals_',this.value)">
+				</div>
+			<div class="record">
+					<label for="decals_2">Kolor naszywki: </label><label id="decals_22">0</label><br>
+					<input type="range" min="0" max="0" value="0" step="1" id="decals_2" oninput="clotheedit2('decals_2',this.value)">
+			</div>
+
+			
+
+			<div class="record">
+					<label for="arms">Rodzaj rękawiczek: </label><label id="arms2">0</label><br>
+					<input type="range" min="0" max="0" value="0" step="1" id="arms" oninput="clotheedit('arms',this.value)">
+				</div>
+			<div class="record">
+						<label for="arms_2">Kolor rękawiczek: </label><label id="arms_22">0</label><br>
+						<input type="range" min="0" max="0" value="0" step="1" id="arms_2" oninput="clotheedit2('arms_2',this.value)">
+			</div>
+
+			
+
+			<div class="record">
+					<label for="pants_1">Rodzaj spodni: </label><label id="pants_12">0</label><br>
+					<input type="range" min="0" max="0" value="0" step="1" id="pants_1" oninput="clotheedit('pants_',this.value)">
+				</div>
+			<div class="record">
+						<label for="pants_2">Kolor spodni: </label><label id="pants_22">0</label><br>
+						<input type="range" min="0" max="0" value="0" step="1" id="pants_2" oninput="clotheedit2('pants_2',this.value)">
+			</div>
+
+			
+
+			<div class="record">
+					<label for="shoes_1">Rodzaj butów: </label><label id="shoes_12">0</label><br>
+					<input type="range" min="0" max="0" value="0" step="1" id="shoes_1" oninput="clotheedit('shoes_',this.value)">
+				</div>
+			<div class="record">
+						<label for="shoes_2">Kolor butów: </label><label id="shoes_22" >0</label><br>
+						<input type="range" min="0" max="0" value="0" step="1" id="shoes_2" oninput="clotheedit2('shoes_2',this.value)">
+			</div>
+
+			<div class="record">
+				<label for="bproof_1">Rodzaj kamizelki: </label><label id="bproof_12">0</label><br>
+				<input type="range" min="0" max="0" value="0" step="1" id="bproof_1" oninput="clotheedit('bproof_',this.value)">
+			</div>
+			<div class="record">
+						<label for="bproof_2">Kolor kamizelki: </label><label id="bproof_22">0</label><br>
+						<input type="range" min="0" max="0" value="0" step="1" id="bproof_2" oninput="clotheedit2('bproof_2',this.value)">
+			</div>
+
+
+			<div class="record">
+					<label for="chain_1">Rodzaj naszyjnika: </label><label id="chain_12">0</label><br>
+					<input type="range" min="0" max="0" value="0" step="1" id="chain_1" oninput="clotheedit('chain_',this.value)">
+			</div>
+			<div class="record">
+						<label for="chain_2">Kolor naszyjnika: </label><label id="chain_22">0</label><br>
+						<input type="range" min="0" max="0" value="0" step="1" id="chain_2" oninput="clotheedit2('chain_2',this.value)">
+			</div>
+
+
+			<div class="record">
+				<label for="helmet_1">Rodzaj kapelusza: </label><label id="helmet_12">0</label><br>
+				<input type="range" min="-1" max="0" value="0" step="1" id="helmet_1" oninput="clotheedit('helmet_',this.value)">
+			</div>
+			<div class="record">
+						<label for="helmet_2">Kolor kapelusza: </label><label id="helmet_22">0</label><br>
+						<input type="range" min="0" max="0" value="0" step="1" id="helmet_2" oninput="clotheedit2('helmet_2',this.value)">
+			</div>
+
+			<div class="record">
+				<label for="mask_1">Rodzaj maski: </label><label id="mask_12">0</label><br>
+				<input type="range" min="-1" max="0" value="0" step="1" id="mask_1" oninput="clotheedit('mask_',this.value)">
+			</div>
+			<div class="record">
+						<label for="mask_2">Kolor maski: </label><label id="mask_22">0</label><br>
+						<input type="range" min="0" max="0" value="0" step="1" id="mask_2" oninput="clotheedit2('mask_2',this.value)">
+			</div>
+
+
+			<div class="record">
+				<label for="glasses_1">Rodzaj okularów: </label><label id="glasses_12">0</label><br>
+				<input type="range" min="0" max="0" value="0" step="1" id="glasses_1" oninput="clotheedit('glasses_',this.value)"> 
+			</div>
+			<div class="record">
+						<label for="glasses_2">Kolor okularów: </label><label id="glasses_22">0</label><br>
+						<input type="range" min="0" max="0" value="0" step="1" id="glasses_2" oninput="clotheedit2('glasses_2',this.value)">
+			</div>
+
+
+			<div class="record">
+				<label for="watches_1">Rodzaj zegarka: </label><label id="watches_12">0</label><br>
+				<input type="range" min="-1" max="0" value="0" step="1" id="watches_1" oninput="clotheedit('watches_',this.value)">
+			</div>
+			<div class="record">
+						<label for="watches_1">Kolor zegarka: </label><label id="watches_22">0</label><br>
+						<input type="range" min="0" max="0" value="0" step="1" id="watches_2" oninput="clotheedit2('watches_2',this.value)">
+			</div>
+
+
+			<div class="record">
+				<label for="bracelets_1">Rodzaj bransoletki: </label><label id="bracelets_12">0</label><br>
+				<input type="range" min="-1" max="0" value="0" step="1" id="bracelets_1" oninput="clotheedit('bracelets_',this.value)">
+			</div>
+			<div class="record">
+						<label for="bracelets_2">Kolor bransoletki: </label><label id='bracelets_22'>0</label><br>
+						<input type="range" min="0" max="0" value="0" step="1" id="bracelets_2" oninput="clotheedit2('bracelets_2',this.value)">
+			</div>
+
+
+			<div class="record">
+				<label for="ears_1">Rodzaj kolczyków: </label><label id='ears_12'>0</label><br>
+				<input type="range" min="-1" max="1" value="0" step="1" id="ears_1" oninput="clotheedit('ears_',this.value)">
+			</div>
+			<div class="record">
+						<label for="ears_2">Kolor kolczyków: </label><label id='ears_22'>0</label><br>
+						<input type="range" min="0" max="0" value="0" step="1" id="ears_2" oninput="clotheedit2('ears_2',this.value)">
+			</div>
+
+				
+				
+		</div>
+
+
+		<div class="barber" style="display: none">
+
+				<div class="record33" style="display: none">
+					<label for="sex">Płeć: </label><label  id="sex12">0</label><br>
+					<input type="range" min="0" max="0" value="0" step="1" id="sex" oninput="faceedit('sex',this.value)">
+				</div>
+
+				<div class="record33" style="display: none">
+					<label for="skin">kolor skóry: </label><label  id="skin12">0</label><br>
+					<input type="range" min="0" max="0" value="0" step="1" id="skin" oninput="faceedit('skin',this.value)">
+				</div>
+
+				<div class="record33" style="display: none">
+					<label for="eye_color">kolor oczu: </label><label  id="eye_color12">0</label><br>
+					<input type="range" min="0" max="0" value="0" step="1" id="eye_color" oninput="faceedit('eye_color',this.value)">
+				</div>
+
+				<div class="record33" style="display: none">
+					<label for="age_1">rodzaj zmarszczek: </label><label  id="age_112">0</label><br>
+					<input type="range" min="0" max="0" value="0" step="1" id="age_1" oninput="faceedit('age_1',this.value)">
+				</div>
+
+				<div class="record33" style="display: none">
+					<label for="age_2">intensywność zmarszczek: </label><label  id="age_212">0</label><br>
+					<input type="range" min="0" max="0" value="0" step="1" id="age_2" oninput="faceedit('age_2',this.value)">
+				</div>
+
+				<div class="record33" style="display: none">
+					<label for="moles_1">rodzaj piegów: </label><label  id="moles_112">0</label><br>
+					<input type="range" min="0" max="0" value="0" step="1" id="moles_1" oninput="faceedit('moles_1',this.value)">
+				</div>
+
+				<div class="record33" style="display: none">
+					<label for="moles_2">intensywność piegów: </label><label  id="moles_212">0</label><br>
+					<input type="range" min="0" max="0" value="0" step="1" id="moles_2" oninput="faceedit('moles_2',this.value)">
+				</div>
+
+				<div class="record33" style="display: none">
+					<label for="chest_1">Włosy na klacie: </label><label  id="chest_112">0</label><br>
+					<input type="range" min="0" max="0" value="0" step="1" id="chest_1" oninput="faceedit('chest_1',this.value)">
+				</div>
+
+				<div class="record33" style="display: none">
+					<label for="chest_3">kolor włosów na klacie: </label><label  id="chest_312">0</label><br>
+					<input type="range" min="0" max="0" value="0" step="1" id="chest_3" oninput="faceedit('chest_3',this.value)">
+				</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<div class="record">
+						<label for="hair_1">Rodzaj włosów: </label><label  id="hair_12">0</label><br>
+						<input type="range" min="0" max="0" value="0" step="1" id="hair_1" oninput="hairedit('hair_1',this.value)">
+				</div>
+				<div class="record">
+						<label for="hair_color_1">Kolor włosów: </label><label id="hair_color_12">0</label><br>
+						<input type="range" min="0" max="0" value="0" step="1" id="hair_color_1" oninput="clotheedit2('hair_color_1',this.value)">
+				</div>
+
+
+
+				<div class="record">
+						<label for="hair_2">Rodzaj pasemek: </label><label  id="hair_22">0</label><br>
+						<input type="range" min="0" max="0" value="0" step="1" id="hair_2" oninput="hairedit('hair_2',this.value)">
+				</div>
+				<div class="record">
+						<label for="hair_color_2">Kolor pasemek: </label><label id="hair_color_22">0</label><br>
+						<input type="range" min="0" max="0" value="0" step="1" id="hair_color_2" oninput="clotheedit2('hair_color_2',this.value)">
+				</div>
+
+
+				<div class="record">
+						<label for="beard_1">Rodzaj zarostu: </label><label  id="beard_12">0</label><br>
+						<input type="range" min="0" max="0" value="0" step="1" id="beard_1" oninput="hairedit('beard_',this.value)">
+				</div>
+				<div class="record">
+						<label for="beard_2">wielkość zarostu: </label><label id="beard_22">0</label><br>
+						<input type="range" min="0" max="0" value="0" step="1" id="beard_2" oninput="clotheedit2('beard_2',this.value)">
+				</div>
+				<div class="record">
+						<label for="beard_3">kolor zarostu: </label><label id="beard_32">0</label><br>
+						<input type="range" min="0" max="0" value="0" step="1" id="beard_3" oninput="clotheedit2('beard_3',this.value)">
+				</div>
+
+
+				<div class="record">
+						<label for="eyebrows_1">Rodzaj brwi: </label><label  id="eyebrows_12">0</label><br>
+						<input type="range" min="0" max="0" value="0" step="1" id="eyebrows_1" oninput="hairedit('eyebrows_',this.value)">
+				</div>
+				<div class="record">
+						<label for="eyebrows_2">wielkość brwi: </label><label id="eyebrows_22">0</label><br>
+						<input type="range" min="0" max="0" value="0" step="1" id="eyebrows_2" oninput="clotheedit2('eyebrows_2',this.value)">
+				</div>
+				<div class="record">
+						<label for="eyebrows_3">kolor brwi: </label><label id="eyebrows_32">0</label><br>
+						<input type="range" min="0" max="63" value="0" step="1" id="eyebrows_300" oninput="clotheedit2('eyebrows_3',this.value)">
+				</div>
+
+
+				<div class="record">
+						<label for="makeup_1">Rodzaj makijażu: </label><label  id="makeup_12">0</label><br>
+						<input type="range" min="0" max="0" value="0" step="1" id="makeup_1" oninput="hairedit('makeup_',this.value)">
+				</div>
+				<div class="record">
+						<label for="makeup_2">intensywność makijażu: </label><label id="makeup_22">0</label><br>
+						<input type="range" min="0" max="0" value="0" step="1" id="makeup_2" oninput="clotheedit2('makeup_2',this.value)">
+				</div>
+				<div class="record">
+						<label for="makeup_3">kolor makijażu: </label><label id="makeup_32">0</label><br>
+						<input type="range" min="0" max="63" value="0" step="1" id="makeup_300" oninput="clotheedit2('makeup_3',this.value)">
+				</div>
+
+
+			<div class="record">
+					<label for="blush_1">Rodzaj rumieńców: </label><label  id="blush_12">0</label><br>
+					<input type="range" min="0" max="0" value="0" step="1" id="blush_1" oninput="hairedit('blush_',this.value)">
+			</div>
+			<div class="record">
+					<label for="blush_2">intensywność rumieńców: </label><label id="blush_22">0</label><br>
+					<input type="range" min="0" max="0" value="0" step="1" id="blush_2" oninput="clotheedit2('blush_2',this.value)">
+			</div>
+			<div class="record">
+					<label for="blush_3">kolor rumieńców: </label><label id="blush_32">0</label><br>
+					<input type="range" min="0" max="63" value="0" step="1" id="blush_300" oninput="clotheedit2('blush_3',this.value)">
+			</div>
+
+
+			<div class="record">
+				<label for="lipstick_1">Rodzaj szminki: </label><label  id="lipstick_12">0</label><br>
+				<input type="range" min="0" max="0" value="0" step="1" id="lipstick_1" oninput="hairedit('lipstick_',this.value)">
+			</div>
+			<div class="record">
+					<label for="lipstick_2">intensywność szminki: </label><label id="lipstick_22">0</label><br>
+					<input type="range" min="0" max="0" value="0" step="1" id="lipstick_2" oninput="clotheedit2('lipstick_2',this.value)">
+			</div>
+			<div class="record">
+					<label for="lipstick_3">kolor szminki: </label><label id="lipstick_32">0</label><br>
+					<input type="range" min="0" max="63" value="0" step="1" id="lipstick_300" oninput="clotheedit2('lipstick_3',this.value)">
+			</div>
+				
+
+
+
+		</div>
+
+		<div class="record22" style="display: none">
+			<button class='category1' onclick="cialo()">Ciało</button><button class='category2' onclick="twarz()">Twarz</button><button class='category3' onclick="odziez()">Odzież</button>
+		</div>
+
+		<div class="skin" style="display: none">
+			<div class="record">
+				<label for="face">Rodzaj Twarzy: </label><label  id="face12">0</label><br>
+				<input type="range" min="0" max="45" value="0" step="1" id="face" oninput="faceedit('face',this.value)">
+			</div>
+			<div class="record">
+				<label for="nose_width">szerokość nosa: </label><label  id="nose_width12">0</label><br>
+				<input type="range" min="-0.99" max="0.99" value="0" step="0.01" id="nose_width" oninput="faceedit('nose_width',this.value)">
+			</div>
+			<div class="record">
+					<label for="nose_peak_hight">wysokość nosa: </label><label id="nose_peak_hight12">0</label><br>
+					<input type="range" min="-0.99" max="0.99" value="0" step="0.01" id="nose_peak_hight" oninput="faceedit('nose_peak_hight',this.value)">
+			</div>
+			<div class="record">
+				<label for="nose_peak_lenght">długość nosa: </label><label id="nose_peak_lenght12">0</label><br>
+				<input type="range" min="-0.99" max="0.99" value="0" step="0.01" id="nose_peak_lenght" oninput="faceedit('nose_peak_lenght',this.value)">
+			</div>
+			<div class="record">
+				<label for="nose_bone_high">wysokość kości nosowej: </label><label id="nose_bone_high12">0</label><br>
+				<input type="range" min="-0.99" max="0.99" value="0" step="0.01" id="nose_bone_high" oninput="faceedit('nose_bone_high',this.value)">
+			</div>
+			<div class="record">
+				<label for="nose_peak_lowering">czubek nosa: </label><label id="nose_peak_lowering12">0</label><br>
+				<input type="range" min="-0.99" max="0.99" value="0" step="0.01" id="nose_peak_lowering" oninput="faceedit('nose_peak_lowering',this.value)">
+			</div>
+			<div class="record">
+				<label for="nose_bone_twist">przegroda nosowa: </label><label id="nose_bone_twist12">0</label><br>
+				<input type="range" min="-0.99" max="0.99" value="0" step="0.01" id="nose_bone_twist" oninput="faceedit('nose_bone_twist',this.value)">
+			</div>
+			<div class="record">
+				<label for="eyebrown_high">wysokość brwi: </label><label id="eyebrown_high12">0</label><br>
+				<input type="range" min="-0.99" max="0.99" value="0" step="0.01" id="eyebrown_high" oninput="faceedit('eyebrown_high',this.value)">
+			</div>
+
+			<div class="record">
+				<label for="eyebrown_forward">wysunięcie brwi: </label><label id="eyebrown_forward12">0</label><br>
+				<input type="range" min="-0.99" max="0.99" value="0" step="0.01" id="eyebrown_forward" oninput="faceedit('eyebrown_forward',this.value)">
+			</div>
+			<div class="record">
+				<label for="cheeks_bone_high">wysokość policzków: </label><label id="cheeks_bone_high12">0</label><br>
+				<input type="range" min="-0.99" max="0.99" value="0" step="0.01" id="cheeks_bone_high" oninput="faceedit('cheeks_bone_high',this.value)">
+			</div>
+			<div class="record">
+				<label for="cheeks_bone_width">Głębokość policzków: </label><label id="cheeks_bone_width12">0</label><br>
+				<input type="range" min="-0.99" max="0.99" value="0" step="0.01" id="cheeks_bone_width" oninput="faceedit('cheeks_bone_width',this.value)">
+			</div>
+			<div class="record">
+				<label for="eyes_openning">Oczy: </label><label id="eyes_openning12">0</label><br>
+				<input type="range" min="-0.99" max="0.99" value="0" step="0.01" id="eyes_openning" oninput="faceedit('eyes_openning',this.value)">
+			</div>
+
+			<div class="record">
+				<label for="lips_thickness">Wypełnienie warg: </label><label id="lips_thickness12">0</label><br>
+				<input type="range" min="-0.99" max="0.99" value="0" step="0.01" id="lips_thickness" oninput="faceedit('lips_thickness',this.value)">
+			</div>
+
+			
+			<div class="record">
+				<label for="jaw_bone_width">Szerokość szczęki: </label><label id="jaw_bone_width12">0</label><br>
+				<input type="range" min="-0.99" max="0.99" value="0" step="0.01" id="jaw_bone_width" oninput="faceedit('jaw_bone_width',this.value)">
+			</div>
+
+
+			<div class="record">
+				<label for="jaw_bone_back_lenght">Wysokość szczęki: </label><label id="jaw_bone_back_lenght12">0</label><br>
+				<input type="range" min="-0.99" max="0.99" value="0" step="0.01" id="jaw_bone_back_lenght" oninput="faceedit('jaw_bone_back_lenght',this.value)">
+			</div>
+
+
+			<div class="record">
+				<label for="chimp_bone_lowering">Długość podbródka: </label> </label><label id="chimp_bone_lowering12">0</label><br>
+				<input type="range" min="-0.99" max="0.99" value="0" step="0.01" id="chimp_bone_lowering" oninput="faceedit('chimp_bone_lowering',this.value)">
+			</div>
+
+
+			<div class="record">
+				<label for="chimp_bone_lenght">wysunięcie podbródka: </label> </label><label id="chimp_bone_lenght12">0</label><br>
+				<input type="range" min="-0.99" max="0.99" value="0" step="0.01" id="chimp_bone_lenght" oninput="faceedit('chimp_bone_lenght',this.value)">
+			</div>
+
+			<div class="record">
+				<label for="chimp_bone_width">Szerokość podbródka: </label></label><label id="chimp_bone_width12">0</label><br>
+				<input type="range" min="-0.99" max="0.99" value="0" step="0.01" id="chimp_bone_width" oninput="faceedit('chimp_bone_width',this.value)">
+			</div>
+
+			<div class="record">
+				<label for="chimp_hole">Wgłębienie podbródka: </label></label><label id="chimp_hole12">0</label><br>
+				<input type="range" min="-0.99" max="0.99" value="0" step="0.01" id="chimp_hole" oninput="faceedit('chimp_hole',this.value)">
+			</div>
+
+			<div class="record">
+				<label for="neck_thikness">Szerokość Szyji: </label></label><label id="neck_thikness12">0</label><br>
+				<input type="range" min="-0.99" max="0.99" value="0" step="0.01" id="neck_thikness" oninput="faceedit('neck_thikness',this.value)">
+			</div>
+
+			
+
+			
+		</div>
+
+		<div class="buttons">
+			<input type="text" class="savecloth" style="display: none" name="savecloth" id="savecloth" placeholder="Nazwa ubrania">
+		<button class="save" onclick="saveskin()">Kup</button> <button class="save2" onclick="exit()">Zamknij</button>
+		</div>
+		<div class="camera">
+			<label for="camera" id="camera22">90</label>
+			<input style="display: none" type="range" min="0" max="360" value="0" step="1" id="camera" oninput="camera(this.value)">
+		</div>
+		
+
+
+
+
+
+
+
+
+
+
+		<!--
+		<button onclick="clotheedit('tshirt_1',true)"><</button>
+		<font id="tshirt_1">0</font>
+		<button onclick="clotheedit('tshirt_1',false)">></button>
+		<br>
+		<button onclick="coloredit('tshirt_2',true)"><</button>
+		<font id="tshirt_2">0</font>
+		<button onclick="coloredit('tshirt_2',false)">></button>
+		<br>
+		<button onclick="clotheedit('torso_1',true)"><</button>
+		<font id="torso_1">0</font>
+		<button onclick="clotheedit('torso_1',false)">></button>
+		<br>
+		<button onclick="coloredit('torso_2',true)"><</button>
+		<font id="torso_2">0</font>
+		<button onclick="coloredit('torso_2',false)">></button>
+		<br>
+		<br>
+		<br>
+		<button onmousedown="headingright(true)" onmouseup="headingright(false)"><</button>
+		<button onmousedown="headingleft(true)" onmouseup="headingleft(false)">></button>
+		<br>
+		<button onmousedown="cameraright(true)" onmouseup="cameraright(false)"><</button>
+		<button onmousedown="cameraleft(true)" onmouseup="cameraleft(false)">></button>
+
+		-->
+	</div>
+	<script type="text/javascript" src="index.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+	<script>
+	document.onkeyup = function (data) {
+		if (data.which == 27) { // Escape key
+			//$('.btn-group').css('display', 'none')
+			//$.post('http://esx_skin/NUIFocusOff', JSON.stringify({}));
+		}
+		if (data.which == 27) { // Escape key
+			$('.btn-group').css('display', 'none')
+			$.post('http://esx_skin/NUIFocusOffnosave', JSON.stringify({}));
+		}
+	};
+
+
+
+
+	var heading = 0;
+
+
+
+	//////////////////////////////////////////////////////
+
+
+	/////////////////
+
+
+
+
+
+
+
+
+
+	///////////////////////////Kamera/////////////////////////
+
+	function headingright(enable) {
+		$.post('http://esx_skin/right', JSON.stringify({enable:enable}));
+	}
+	function headingleft(enable) {
+		$.post('http://esx_skin/left', JSON.stringify({enable:enable}));
+	}
+
+
+
+	function cameraright(enable) {
+		$.post('http://esx_skin/rightcamera', JSON.stringify({enable:enable}));
+	}
+	function cameraleft(enable) {
+		$.post('http://esx_skin/leftcamera', JSON.stringify({enable:enable}));
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>

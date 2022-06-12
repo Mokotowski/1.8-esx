@@ -1,0 +1,32 @@
+Locales['pl'] = {
+	['used_bread'] = 'Zjedzono suchy ~y~chleb~s~',
+	['used_banana'] = 'Zjedzono suchy ~y~chleb~s~',
+	['used_water'] = 'Wypito ~y~wodę~s~',
+	['used_chocolate'] = 'Zjedzono ~y~czekoladę~s~',
+	['used_chipsy'] = 'Zjedzono ~y~chipsy~s~',
+	['used_sandwich'] = 'Zjedzono ~y~kanapkę~s~',
+	['used_hamburger'] = 'Zjedzono ~y~hamburgera~s~',
+	['used_cupcake'] = 'Zjedzono ~y~babeczkę~s~',
+	['used_cocacola'] = 'Wypito napój ~y~Coca-Cola~s~',
+	['used_icetea'] = 'Wypito napój ~y~Ice-Tea~s~',
+	['used_redbull'] = 'Wypito energetyka ~y~Redbull~s~',
+	['used_milk'] = 'Wypito ~y~mleko~s~',
+	['used_coffee'] = 'Wypito ~y~kawę~s~',
+	['used_b_coffee'] = 'Wypito dużą ~y~kawę~s~',
+	['used_juice'] = 'Wypito ~y~sok~s~',
+	['used_donut'] = 'Zjedzono ~y~donut~s~',
+	['used_hotdog1'] = 'zjadłeś/aś ~y~1x~s~ ~b~HOT-DOGA z ketchupem~s~',
+	['used_hotdog2'] = 'zjadłeś/aś ~y~1x~s~ ~b~HOT-DOGA z musztardą~s~',
+	['used_hotdog3'] = 'zjadłeś/aś ~y~1x~s~ ~b~HOT-DOGA z sosem czosnkowym~s~',
+	['used_fish'] = 'Zjedzono ~g~surową rybę~s~',
+	['used_packaged_chicken'] = 'Zjedzono ~g~surowego kurczaka~s~',
+	['used_apple'] = 'Zjedzono ~y~jabłko~s~',	
+	['used_pomarancza'] = 'Zjedzono ~y~pomarańczę~s~',
+	['dive_suit_on']     = 'Wkładasz maske do nurkowania i odpalasz zbiornik z tlenem. Poziom tlenu: ~g~100~w~',
+	['oxygen_notify']    = 'pozostało ~b~tlenu~y~ w butli: %s%s~w~',
+	['redgull_consumed'] = 'Poczułeś przypływ energi, możesz teraz biegać przez ~b~5~w~ minut ~b~bez przerwy~w~!',
+	['redgull_end']      = 'Tętno powraca do normy, nie możesz już biegać bez przerwy',
+}
+
+
+
